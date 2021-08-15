@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Firma.Admin" %>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    <title>Bootstrap Example</title>
+    <!--DataTables CSS & JS-->
+    <script src="DataTables/jquery-3.6.0.min.js"></script>
+    <link href="DataTables/jquery.dataTables.css" rel="stylesheet" />
+    <script src="DataTables/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.myList').DataTable(
+                {
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+                    }
+                }
+            );
+        });
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>--%>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Admin Yönetim</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">Müşteri</a></li>
+                <li><a href="Kategori.Aspx">Kategori</a></li>
+                <li><a href="#">Ürün</a></li>
+                <li><a href="#">Personel</a></li>
+                <li><a href="#">Satış</a></li>
+                <li><a href="#">Ayarlar</a></li>
+                <li><a href="#">Kullanıcı Paneli</a></li>
+                <li><a href="#">Ürün Paneli</a></li>
+                <li><a href="#" style="color:black;" class="btn btn-danger">Çıkış</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+</body>
+</html>
+
+
