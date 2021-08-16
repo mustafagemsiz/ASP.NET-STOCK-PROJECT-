@@ -18,8 +18,8 @@
                         <td><%#Eval("KATEGORIID")%></td>
                         <td><%#Eval("KATEGORIAD")%></td>
                         <td>
-                            <asp:HyperLink CssClass="btn btn-warning" ID="HyperLink1" runat="server" NavigateUrl='<%# "~/KategoriGuncelle.Aspx?KATEGORIID="+Eval("KATEGORIID")%>'>Güncelle</asp:HyperLink>
-                            <asp:HyperLink CssClass="btn btn-danger" ID="HyperLink2" runat="server" NavigateUrl='<%# "~/KategoriSil.Aspx?KATEGORIID="+Eval("KATEGORIID")%>'>Sil</asp:HyperLink>
+                            <asp:HyperLink CssClass="btn btn-warning" ID="HyperLink1" runat="server" NavigateUrl='<%# "~/Kategori/KategoriGuncelle.Aspx?KATEGORIID="+Eval("KATEGORIID")%>'>Güncelle</asp:HyperLink>
+                            <asp:HyperLink CssClass="btn btn-danger" ID="HyperLink2" runat="server" NavigateUrl='<%# "~/Kategori/KategoriSil.Aspx?KATEGORIID="+Eval("KATEGORIID")%>'>Sil</asp:HyperLink>
                         </td>
                 </ItemTemplate>
             </asp:Repeater>

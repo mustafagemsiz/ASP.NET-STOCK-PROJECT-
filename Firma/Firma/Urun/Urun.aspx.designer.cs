@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Firma {
+namespace Firma.Urun {
     
     
     public partial class Urun {

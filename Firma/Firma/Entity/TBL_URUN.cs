@@ -26,6 +26,7 @@ namespace Firma.Entity
         public Nullable<int> URUNKATEGORI { get; set; }
         public Nullable<decimal> URUNFIYAT { get; set; }
         public Nullable<short> URUNSTOK { get; set; }
+        public Nullable<bool> URUNDURUM { get; set; }
     
         public virtual TBL_KATEGORI TBL_KATEGORI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

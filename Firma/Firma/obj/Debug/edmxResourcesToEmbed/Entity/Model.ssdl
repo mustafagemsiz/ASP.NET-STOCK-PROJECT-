@@ -43,6 +43,7 @@
     <Property Name="URUNKATEGORI" Type="int" />
     <Property Name="URUNFIYAT" Type="decimal" Precision="18" Scale="2" />
     <Property Name="URUNSTOK" Type="smallint" />
+    <Property Name="URUNDURUM" Type="bit" />
   </EntityType>
   <Association Name="FK_TBL_SATIS_TBL_MUSTERI">
     <End Role="TBL_MUSTERI" Type="Self.TBL_MUSTERI" Multiplicity="0..1" />

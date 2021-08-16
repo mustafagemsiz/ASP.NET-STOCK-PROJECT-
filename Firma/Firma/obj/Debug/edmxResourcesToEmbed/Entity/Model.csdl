@@ -51,6 +51,7 @@
     <Property Name="URUNSTOK" Type="Int16" />
     <NavigationProperty Name="TBL_KATEGORI" Relationship="Self.FK_TBL_URUN_TBL_KATEGORI" FromRole="TBL_URUN" ToRole="TBL_KATEGORI" />
     <NavigationProperty Name="TBL_SATIS" Relationship="Self.FK_TBL_SATIS_TBL_URUN" FromRole="TBL_URUN" ToRole="TBL_SATIS" />
+    <Property Name="URUNDURUM" Type="Boolean" />
   </EntityType>
   <Association Name="FK_TBL_URUN_TBL_KATEGORI">
     <End Role="TBL_KATEGORI" Type="Self.TBL_KATEGORI" Multiplicity="0..1" />

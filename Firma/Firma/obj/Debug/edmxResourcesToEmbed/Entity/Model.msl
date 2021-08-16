@@ -41,6 +41,7 @@
     <EntitySetMapping Name="TBL_URUN">
       <EntityTypeMapping TypeName="Db_FirmaModel.TBL_URUN">
         <MappingFragment StoreEntitySet="TBL_URUN">
+          <ScalarProperty Name="URUNDURUM" ColumnName="URUNDURUM" />
           <ScalarProperty Name="URUNID" ColumnName="URUNID" />
           <ScalarProperty Name="URUNAD" ColumnName="URUNAD" />
           <ScalarProperty Name="URUNMARKA" ColumnName="URUNMARKA" />

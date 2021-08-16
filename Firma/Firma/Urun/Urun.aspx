@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Urun.aspx.cs" Inherits="Firma.Urun" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Urun.aspx.cs" Inherits="Firma.Urun.Urun" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <table class="myList">
+        <table class="myList">
         <thead>
             <tr>
                 <th scope="col">Ürün No</th>
@@ -22,16 +21,16 @@
                         <td><%#Eval("URUNID")%></td>
                         <td><%#Eval("URUNAD")%></td>
                         <td><%#Eval("URUNMARKA")%></td>
-                        <td><%#Eval("URUNKATEGORI")%></td>
+                        <td><%#Eval("KATEGORIAD")%></td>
                         <td><%#Eval("URUNFIYAT")%></td>
                         <td><%#Eval("URUNSTOK")%></td>
                         <td>
-                            <asp:HyperLink CssClass="btn btn-warning" ID="HyperLink1" runat="server" NavigateUrl='<%# "~/UrunGuncelle.Aspx?URUNID="+Eval("URUNID")%>'>Güncelle</asp:HyperLink>
-                            <asp:HyperLink CssClass="btn btn-danger" ID="HyperLink2" runat="server" NavigateUrl='<%# "~/UrunSil.Aspx?URUNID="+Eval("URUNID")%>'>Sil</asp:HyperLink>
+                            <asp:HyperLink CssClass="btn btn-warning" ID="HyperLink1" runat="server" NavigateUrl='<%# "~/Urun/UrunGuncelle.Aspx?URUNID="+Eval("URUNID")%>'>Güncelle</asp:HyperLink>
+                            <asp:HyperLink CssClass="btn btn-danger" ID="HyperLink2" runat="server" NavigateUrl='<%# "~/Urun/UrunSil.Aspx?URUNID="+Eval("URUNID")%>'>Sil</asp:HyperLink>
                         </td>
                 </ItemTemplate>
             </asp:Repeater>
         </tbody>
     </table>
-    <a href="KategoriEkle.Aspx" class="btn btn-primary" style="margin-top: 8px;">Kategori Ekle</a>
+    <a href="UrunEkle.Aspx" class="btn btn-primary" style="margin-top: 8px;">Ürün Ekle</a>
 </asp:Content>
