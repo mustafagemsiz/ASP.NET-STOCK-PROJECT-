@@ -36,11 +36,11 @@
                 <a class="navbar-brand" href="#">Admin Yönetim</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="#">Müşteri</a></li>
+                <li><a href="/Musteri/Musteri.Aspx">Müşteri</a></li>
                 <li><a href="/Kategori/Kategori.Aspx">Kategori</a></li>
                 <li><a href="/Urun/Urun.Aspx">Ürün</a></li>
                 <li><a href="#">Personel</a></li>
-                <li><a href="#">Satış</a></li>
+                <li><a href="/Satis/Satis.Aspx">Satış</a></li>
                 <li><a href="#">Ayarlar</a></li>
                 <li><a href="#">Kullanıcı Paneli</a></li>
                 <li><a href="#">Ürün Paneli</a></li>
