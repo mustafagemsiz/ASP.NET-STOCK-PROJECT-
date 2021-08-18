@@ -17,4 +17,3 @@ Database
 
 ![8](https://user-images.githubusercontent.com/77343458/129929665-7e7dc905-310f-4b2e-863b-bfc0b88b27cb.png)
 
-![10](https://user-images.githubusercontent.com/77343458/129929670-af8fcfbb-61df-4084-a2c8-77a69a5dd0df.png)
