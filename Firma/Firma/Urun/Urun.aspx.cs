@@ -9,22 +9,25 @@ namespace Firma.Urun
 {
     public partial class Urun : System.Web.UI.Page
     {
+        Db_FirmaEntities db = new Db_FirmaEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            Db_FirmaEntities db = new Db_FirmaEntities();
-            //var urun = db.TBL_URUN.Where(x=>x.URUNDURUM==true).ToList();
-            var urun = (from x in db.TBL_URUN where x.URUNDURUM==true
-                           select new
-                           {
-                               x.URUNID,
-                               x.URUNAD,
-                               x.URUNMARKA,
-                               x.TBL_KATEGORI.KATEGORIAD,
-                               x.URUNFIYAT,
-                               x.URUNSTOK
-                           }).ToList();
-            Repeater1.DataSource = urun;
-            Repeater1.DataBind();
+
+                //var urun = db.TBL_URUN.Where(x=>x.URUNDURUM==true).ToList();
+                var urun = (from x in db.TBL_URUN
+                            where x.URUNDURUM == true
+                            select new
+                            {
+                                x.URUNID,
+                                x.URUNAD,
+                                x.URUNMARKA,
+                                x.TBL_KATEGORI.KATEGORIAD,
+                                x.URUNFIYAT,
+                                x.URUNSTOK
+                            }).ToList();
+                Repeater1.DataSource = urun;
+                Repeater1.DataBind();
+
         }
     }
 }

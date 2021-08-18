@@ -12,19 +12,13 @@ namespace Firma
         Db_FirmaEntities db = new Db_FirmaEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+
+            if (Page.IsPostBack == false)
             {
-                if (Page.IsPostBack == false)
-                {
-                    int id = Convert.ToInt32(Request.QueryString["KATEGORIID"]);
-                    TxtKategoriId.Text = id.ToString();
-                    var ad = db.TBL_KATEGORI.Find(id);
-                    TxtKategoriAd.Text = ad.KATEGORIAD.ToString();
-                }
-            }
-            catch (Exception)
-            {
-                Response.Redirect("Kategori.Aspx");
+                int id = Convert.ToInt32(Request.QueryString["KATEGORIID"]);
+                TxtKategoriId.Text = id.ToString();
+                var ad = db.TBL_KATEGORI.Find(id);
+                TxtKategoriAd.Text = ad.KATEGORIAD.ToString();
             }
 
 
@@ -33,11 +27,9 @@ namespace Firma
 
         protected void BtnKategoriGuncelle_Click(object sender, EventArgs e)
         {
-            try
-            {
+            int id = Convert.ToInt32(Request.QueryString["KATEGORIID"]);
             if (TxtKategoriAd.Text != "" && TxtKategoriAd.Text != " ")
             {
-                int id = Convert.ToInt32(Request.QueryString["KATEGORIID"]);
                 var ad = db.TBL_KATEGORI.Find(id);
                 ad.KATEGORIAD = TxtKategoriAd.Text;
                 db.SaveChanges();
@@ -47,13 +39,8 @@ namespace Firma
             {
                 Response.Redirect("Kategori.Aspx");
             }
-            }
-            catch (Exception)
-            {
-                Response.Redirect("Kategori.Aspx");
-            }
-
-
         }
+
+
     }
 }

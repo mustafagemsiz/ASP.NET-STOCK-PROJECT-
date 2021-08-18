@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Db_FirmaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Db_Firma.dbo.TBL_ADMIN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBL_ADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KULLANICI" Type="varchar" MaxLength="50" />
+    <Property Name="SIFRE" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="TBL_KATEGORI">
     <Key>
       <PropertyRef Name="KATEGORIID" />
@@ -15,6 +25,7 @@
     <Property Name="MUSTERIAD" Type="varchar" MaxLength="25" />
     <Property Name="MUSTERISOYAD" Type="varchar" MaxLength="25" />
     <Property Name="MUSTERITELEFON" Type="varchar" MaxLength="20" />
+    <Property Name="MUSTERIDURUM" Type="bit" />
   </EntityType>
   <EntityType Name="TBL_PERSONEL">
     <Key>
@@ -22,6 +33,9 @@
     </Key>
     <Property Name="PERSONELID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PERSONELADSOYAD" Type="varchar" MaxLength="50" />
+    <Property Name="PERSONELTELEFON" Type="varchar" MaxLength="50" />
+    <Property Name="PERSONELADRES" Type="varchar" MaxLength="100" />
+    <Property Name="PERSONELDURUM" Type="bit" />
   </EntityType>
   <EntityType Name="TBL_SATIS">
     <Key>
@@ -99,6 +113,13 @@
     <EntitySet Name="TBL_PERSONEL" EntityType="Self.TBL_PERSONEL" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_SATIS" EntityType="Self.TBL_SATIS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_URUN" EntityType="Self.TBL_URUN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBL_ADMIN].[ID] AS [ID], 
+    [TBL_ADMIN].[KULLANICI] AS [KULLANICI], 
+    [TBL_ADMIN].[SIFRE] AS [SIFRE]
+    FROM [dbo].[TBL_ADMIN] AS [TBL_ADMIN]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_TBL_SATIS_TBL_MUSTERI" Association="Self.FK_TBL_SATIS_TBL_MUSTERI">
       <End Role="TBL_MUSTERI" EntitySet="TBL_MUSTERI" />
       <End Role="TBL_SATIS" EntitySet="TBL_SATIS" />

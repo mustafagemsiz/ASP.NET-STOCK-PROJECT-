@@ -21,6 +21,56 @@
             );
         });
     </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Float four columns side by side */
+        .column {
+            float: left;
+            width: 25%;
+            padding: 0 10px;
+        }
+
+        /* Remove extra left and right margins, due to padding */
+        .row {
+            margin: 0 -5px;
+        }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+        /* Responsive columns */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Style the counter cards */
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+
+        .gi {
+            font-size: 50px;
+            margin: 5px;
+        }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -29,7 +79,6 @@
 
 </head>
 <body>
-
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -39,12 +88,10 @@
                 <li><a href="/Musteri/Musteri.Aspx">Müşteri</a></li>
                 <li><a href="/Kategori/Kategori.Aspx">Kategori</a></li>
                 <li><a href="/Urun/Urun.Aspx">Ürün</a></li>
-                <li><a href="#">Personel</a></li>
+                <li><a href="/Personel/Personel.Aspx">Personel</a></li>
                 <li><a href="/Satis/Satis.Aspx">Satış</a></li>
-                <li><a href="#">Ayarlar</a></li>
-                <li><a href="#">Kullanıcı Paneli</a></li>
-                <li><a href="#">Ürün Paneli</a></li>
-                <li><a href="#" class="btn btn-danger !important">Çıkış</a></li>
+                <li><a href="/Istatistik/Istatistik.Aspx">İstatistik</a></li>
+                <li><a href="/Page/Cikis.Aspx" style="background-color:red; color:white !important">Çıkış</a></li>
             </ul>
         </div>
     </nav>
@@ -53,7 +100,6 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
         </asp:ContentPlaceHolder>
     </div>
-
 </body>
 </html>
 

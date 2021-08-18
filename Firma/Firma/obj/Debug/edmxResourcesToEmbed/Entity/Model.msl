@@ -12,6 +12,7 @@
     <EntitySetMapping Name="TBL_MUSTERI">
       <EntityTypeMapping TypeName="Db_FirmaModel.TBL_MUSTERI">
         <MappingFragment StoreEntitySet="TBL_MUSTERI">
+          <ScalarProperty Name="MUSTERIDURUM" ColumnName="MUSTERIDURUM" />
           <ScalarProperty Name="MUSTERIID" ColumnName="MUSTERIID" />
           <ScalarProperty Name="MUSTERIAD" ColumnName="MUSTERIAD" />
           <ScalarProperty Name="MUSTERISOYAD" ColumnName="MUSTERISOYAD" />
@@ -22,6 +23,9 @@
     <EntitySetMapping Name="TBL_PERSONEL">
       <EntityTypeMapping TypeName="Db_FirmaModel.TBL_PERSONEL">
         <MappingFragment StoreEntitySet="TBL_PERSONEL">
+          <ScalarProperty Name="PERSONELDURUM" ColumnName="PERSONELDURUM" />
+          <ScalarProperty Name="PERSONELADRES" ColumnName="PERSONELADRES" />
+          <ScalarProperty Name="PERSONELTELEFON" ColumnName="PERSONELTELEFON" />
           <ScalarProperty Name="PERSONELID" ColumnName="PERSONELID" />
           <ScalarProperty Name="PERSONELADSOYAD" ColumnName="PERSONELADSOYAD" />
         </MappingFragment>
@@ -48,6 +52,15 @@
           <ScalarProperty Name="URUNKATEGORI" ColumnName="URUNKATEGORI" />
           <ScalarProperty Name="URUNFIYAT" ColumnName="URUNFIYAT" />
           <ScalarProperty Name="URUNSTOK" ColumnName="URUNSTOK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_ADMIN">
+      <EntityTypeMapping TypeName="Db_FirmaModel.TBL_ADMIN">
+        <MappingFragment StoreEntitySet="TBL_ADMIN">
+          <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+          <ScalarProperty Name="KULLANICI" ColumnName="KULLANICI" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

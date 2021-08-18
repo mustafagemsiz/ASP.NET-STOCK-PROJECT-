@@ -17,6 +17,7 @@
     <Property Name="MUSTERISOYAD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
     <Property Name="MUSTERITELEFON" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TBL_SATIS" Relationship="Self.FK_TBL_SATIS_TBL_MUSTERI" FromRole="TBL_MUSTERI" ToRole="TBL_SATIS" />
+    <Property Name="MUSTERIDURUM" Type="Boolean" />
   </EntityType>
   <EntityType Name="TBL_PERSONEL">
     <Key>
@@ -25,6 +26,9 @@
     <Property Name="PERSONELID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PERSONELADSOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TBL_SATIS" Relationship="Self.FK_TBL_SATIS_TBL_PERSONEL" FromRole="TBL_PERSONEL" ToRole="TBL_SATIS" />
+    <Property Name="PERSONELTELEFON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PERSONELADRES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PERSONELDURUM" Type="Boolean" />
   </EntityType>
   <EntityType Name="TBL_SATIS">
     <Key>
@@ -123,5 +127,14 @@
       <End Role="TBL_URUN" EntitySet="TBL_URUN" />
       <End Role="TBL_SATIS" EntitySet="TBL_SATIS" />
     </AssociationSet>
+    <EntitySet Name="TBL_ADMIN" EntityType="Db_FirmaModel.TBL_ADMIN" />
   </EntityContainer>
+  <EntityType Name="TBL_ADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KULLANICI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SIFRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
 </Schema>

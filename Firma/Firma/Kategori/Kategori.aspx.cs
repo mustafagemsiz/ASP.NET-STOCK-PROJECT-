@@ -12,9 +12,17 @@ namespace Firma
         Db_FirmaEntities db = new Db_FirmaEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
             var degerler = db.TBL_KATEGORI.ToList();
             Repeater1.DataSource = degerler;
             Repeater1.DataBind();
+            }
+            catch (Exception)
+            {
+                Response.Redirect("/Page/Hata.aspx");
+            }
+
         }
     }
 }

@@ -22,6 +22,9 @@ namespace Firma.Entity
     
         public byte PERSONELID { get; set; }
         public string PERSONELADSOYAD { get; set; }
+        public string PERSONELTELEFON { get; set; }
+        public string PERSONELADRES { get; set; }
+        public Nullable<bool> PERSONELDURUM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBL_SATIS> TBL_SATIS { get; set; }

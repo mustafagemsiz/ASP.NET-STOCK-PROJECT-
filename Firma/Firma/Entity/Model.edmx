@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Db_FirmaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Db_Firma.dbo.TBL_ADMIN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TBL_ADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KULLANICI" Type="varchar" MaxLength="50" />
+          <Property Name="SIFRE" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TBL_KATEGORI">
           <Key>
             <PropertyRef Name="KATEGORIID" />
@@ -20,6 +30,7 @@
           <Property Name="MUSTERIAD" Type="varchar" MaxLength="25" />
           <Property Name="MUSTERISOYAD" Type="varchar" MaxLength="25" />
           <Property Name="MUSTERITELEFON" Type="varchar" MaxLength="20" />
+          <Property Name="MUSTERIDURUM" Type="bit" />
         </EntityType>
         <EntityType Name="TBL_PERSONEL">
           <Key>
@@ -27,6 +38,9 @@
           </Key>
           <Property Name="PERSONELID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PERSONELADSOYAD" Type="varchar" MaxLength="50" />
+          <Property Name="PERSONELTELEFON" Type="varchar" MaxLength="50" />
+          <Property Name="PERSONELADRES" Type="varchar" MaxLength="100" />
+          <Property Name="PERSONELDURUM" Type="bit" />
         </EntityType>
         <EntityType Name="TBL_SATIS">
           <Key>
@@ -104,6 +118,13 @@
           <EntitySet Name="TBL_PERSONEL" EntityType="Self.TBL_PERSONEL" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_SATIS" EntityType="Self.TBL_SATIS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_URUN" EntityType="Self.TBL_URUN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_ADMIN" EntityType="Self.TBL_ADMIN" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TBL_ADMIN].[ID] AS [ID], 
+    [TBL_ADMIN].[KULLANICI] AS [KULLANICI], 
+    [TBL_ADMIN].[SIFRE] AS [SIFRE]
+    FROM [dbo].[TBL_ADMIN] AS [TBL_ADMIN]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK_TBL_SATIS_TBL_MUSTERI" Association="Self.FK_TBL_SATIS_TBL_MUSTERI">
             <End Role="TBL_MUSTERI" EntitySet="TBL_MUSTERI" />
             <End Role="TBL_SATIS" EntitySet="TBL_SATIS" />
@@ -142,6 +163,7 @@
           <Property Name="MUSTERISOYAD" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="MUSTERITELEFON" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TBL_SATIS" Relationship="Self.FK_TBL_SATIS_TBL_MUSTERI" FromRole="TBL_MUSTERI" ToRole="TBL_SATIS" />
+          <Property Name="MUSTERIDURUM" Type="Boolean" />
         </EntityType>
         <EntityType Name="TBL_PERSONEL">
           <Key>
@@ -150,6 +172,9 @@
           <Property Name="PERSONELID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PERSONELADSOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TBL_SATIS" Relationship="Self.FK_TBL_SATIS_TBL_PERSONEL" FromRole="TBL_PERSONEL" ToRole="TBL_SATIS" />
+          <Property Name="PERSONELTELEFON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PERSONELADRES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PERSONELDURUM" Type="Boolean" />
         </EntityType>
         <EntityType Name="TBL_SATIS">
           <Key>
@@ -248,7 +273,16 @@
             <End Role="TBL_URUN" EntitySet="TBL_URUN" />
             <End Role="TBL_SATIS" EntitySet="TBL_SATIS" />
           </AssociationSet>
+          <EntitySet Name="TBL_ADMIN" EntityType="Db_FirmaModel.TBL_ADMIN" />
         </EntityContainer>
+        <EntityType Name="TBL_ADMIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KULLANICI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SIFRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -266,6 +300,7 @@
           <EntitySetMapping Name="TBL_MUSTERI">
             <EntityTypeMapping TypeName="Db_FirmaModel.TBL_MUSTERI">
               <MappingFragment StoreEntitySet="TBL_MUSTERI">
+                <ScalarProperty Name="MUSTERIDURUM" ColumnName="MUSTERIDURUM" />
                 <ScalarProperty Name="MUSTERIID" ColumnName="MUSTERIID" />
                 <ScalarProperty Name="MUSTERIAD" ColumnName="MUSTERIAD" />
                 <ScalarProperty Name="MUSTERISOYAD" ColumnName="MUSTERISOYAD" />
@@ -276,6 +311,9 @@
           <EntitySetMapping Name="TBL_PERSONEL">
             <EntityTypeMapping TypeName="Db_FirmaModel.TBL_PERSONEL">
               <MappingFragment StoreEntitySet="TBL_PERSONEL">
+                <ScalarProperty Name="PERSONELDURUM" ColumnName="PERSONELDURUM" />
+                <ScalarProperty Name="PERSONELADRES" ColumnName="PERSONELADRES" />
+                <ScalarProperty Name="PERSONELTELEFON" ColumnName="PERSONELTELEFON" />
                 <ScalarProperty Name="PERSONELID" ColumnName="PERSONELID" />
                 <ScalarProperty Name="PERSONELADSOYAD" ColumnName="PERSONELADSOYAD" />
               </MappingFragment>
@@ -302,6 +340,15 @@
                 <ScalarProperty Name="URUNKATEGORI" ColumnName="URUNKATEGORI" />
                 <ScalarProperty Name="URUNFIYAT" ColumnName="URUNFIYAT" />
                 <ScalarProperty Name="URUNSTOK" ColumnName="URUNSTOK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_ADMIN">
+            <EntityTypeMapping TypeName="Db_FirmaModel.TBL_ADMIN">
+              <MappingFragment StoreEntitySet="TBL_ADMIN">
+                <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+                <ScalarProperty Name="KULLANICI" ColumnName="KULLANICI" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

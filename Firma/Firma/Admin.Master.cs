@@ -11,7 +11,16 @@ namespace Firma
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                string id = Session["kullanici"].ToString();
+                Session.Add("kullanici", id);
+            }
+            catch (Exception)
+            {
 
+                Response.Redirect("~/Login/Login.aspx");
+            }
         }
     }
 }

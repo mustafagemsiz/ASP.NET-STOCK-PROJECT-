@@ -23,13 +23,13 @@
                             Soyad
                         </label>
                         <asp:TextBox ID="TxtMusteriSoyad" runat="server" CssClass="form-control"></asp:TextBox>
-                        <br />                            
+                        <br />
                         <label>
                             Telefon
                         </label>
                         <asp:TextBox ID="TxtMusteriTelefon" runat="server" CssClass="form-control"></asp:TextBox>
                         <br />
-                        <asp:Button ID="Button1" runat="server" Text="Kaydet" CssClass="btn btn-primary" OnClick="Button1_Click" />
+                        <asp:Button ID="Button1" runat="server" Text="Kaydet" CssClass="btn btn-success" OnClick="Button1_Click" />
                         <asp:Button ID="Button2" runat="server" Text="Vazgeç" CssClass="btn btn-danger" data-dismiss="modal" />
                     </div>
                 </form>
@@ -58,6 +58,8 @@
                         <td><%#Eval("MUSTERITELEFON")%></td>
                         <td>
                             <asp:HyperLink CssClass="btn btn-warning" ID="HyperLink1" runat="server" NavigateUrl='<%# "~/Musteri/MusteriGuncelle.Aspx?MUSTERIID="+Eval("MUSTERIID")%>'>Güncelle</asp:HyperLink>
+                            <asp:HyperLink CssClass="btn btn-danger" ID="HyperLink2" runat="server" NavigateUrl='<%# "~/Musteri/MusteriSil.Aspx?MUSTERIID="+Eval("MUSTERIID")%>'>Sil</asp:HyperLink>
+
                         </td>
                 </ItemTemplate>
             </asp:Repeater>

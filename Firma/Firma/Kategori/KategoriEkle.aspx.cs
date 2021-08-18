@@ -18,23 +18,16 @@ namespace Firma
 
         protected void BtnKategoriEkle_Click(object sender, EventArgs e)
         {
-            try
+            if (TxtKategori.Text != "" && TxtKategori.Text != " ")
             {
-                if (TxtKategori.Text != "" && TxtKategori.Text != " ")
-                {
-                    tbl.KATEGORIAD = TxtKategori.Text;
-                    db.TBL_KATEGORI.Add(tbl);
-                    db.SaveChanges();
-                    Response.Redirect("Kategori.Aspx");
-                }
-                else
-                {         
-                    Response.Redirect("KategoriEkle.Aspx");
-                }
-            }
-            catch (Exception)
-            {
+                tbl.KATEGORIAD = TxtKategori.Text;
+                db.TBL_KATEGORI.Add(tbl);
+                db.SaveChanges();
                 Response.Redirect("Kategori.Aspx");
+            }
+            else
+            {
+                Response.Redirect("KategoriEkle.Aspx");
             }
         }
     }

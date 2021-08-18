@@ -88,11 +88,20 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="Image\bg.png" />
     <Content Include="Kategori\KategoriEkle.aspx" />
     <Content Include="Kategori\KategoriGuncelle.aspx" />
     <Content Include="Kategori\KategoriSil.aspx" />
+    <Content Include="Istatistik\Istatistik.aspx" />
+    <Content Include="Login\Login.aspx" />
     <Content Include="Musteri\Musteri.aspx" />
     <Content Include="Musteri\MusteriGuncelle.aspx" />
+    <Content Include="Musteri\MusteriSil.aspx" />
+    <Content Include="Page\Cikis.aspx" />
+    <Content Include="Page\Hata.aspx" />
+    <Content Include="Personel\Personel.aspx" />
+    <Content Include="Personel\PersonelGuncelle.aspx" />
+    <Content Include="Personel\PersonelSil.aspx" />
     <Content Include="Satis\Satis.aspx" />
     <Content Include="Satis\SatisEkle.aspx" />
     <Content Include="Urun\Urun.aspx" />
@@ -124,6 +133,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_ADMIN.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\TBL_KATEGORI.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -161,6 +173,20 @@
     <Compile Include="Kategori\KategoriSil.aspx.designer.cs">
       <DependentUpon>KategoriSil.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Istatistik\Istatistik.aspx.cs">
+      <DependentUpon>Istatistik.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Istatistik\Istatistik.aspx.designer.cs">
+      <DependentUpon>Istatistik.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Musteri\Musteri.aspx.cs">
       <DependentUpon>Musteri.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -174,6 +200,48 @@
     </Compile>
     <Compile Include="Musteri\MusteriGuncelle.aspx.designer.cs">
       <DependentUpon>MusteriGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Musteri\MusteriSil.aspx.cs">
+      <DependentUpon>MusteriSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Musteri\MusteriSil.aspx.designer.cs">
+      <DependentUpon>MusteriSil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Cikis.aspx.cs">
+      <DependentUpon>Cikis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Cikis.aspx.designer.cs">
+      <DependentUpon>Cikis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Hata.aspx.cs">
+      <DependentUpon>Hata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Hata.aspx.designer.cs">
+      <DependentUpon>Hata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\Personel.aspx.cs">
+      <DependentUpon>Personel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personel\Personel.aspx.designer.cs">
+      <DependentUpon>Personel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\PersonelGuncelle.aspx.cs">
+      <DependentUpon>PersonelGuncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personel\PersonelGuncelle.aspx.designer.cs">
+      <DependentUpon>PersonelGuncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\PersonelSil.aspx.cs">
+      <DependentUpon>PersonelSil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personel\PersonelSil.aspx.designer.cs">
+      <DependentUpon>PersonelSil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Kategori\Kategori.aspx.cs">

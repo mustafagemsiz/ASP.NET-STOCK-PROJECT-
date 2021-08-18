@@ -24,6 +24,7 @@ namespace Firma.Entity
         public string MUSTERIAD { get; set; }
         public string MUSTERISOYAD { get; set; }
         public string MUSTERITELEFON { get; set; }
+        public Nullable<bool> MUSTERIDURUM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBL_SATIS> TBL_SATIS { get; set; }
