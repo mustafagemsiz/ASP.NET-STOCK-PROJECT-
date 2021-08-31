@@ -1,4 +1,4 @@
-# ASP.NET-STOCK-PROJECT-
+# ASP.NET-STOCK-PROJECT
 
 ![10](https://user-images.githubusercontent.com/77343458/129930937-66dd654a-956c-4176-b325-b1b8dff5a50a.png)
 
